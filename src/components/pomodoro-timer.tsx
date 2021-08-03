@@ -1,8 +1,9 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
 import { useState } from "react";
 import { useInterval } from "../hooks/use-interval";
+
+//  # My own files
+import { secondsToTime } from "../utils/seconds-to-time";
 
 interface Props {
   defaultPomodoroTime: number;
@@ -14,5 +15,5 @@ export function PomodoroTimer(props: Props): JSX.Element {
   useInterval(() => {
     setMainTime(mainTime - 1);
   }, 1000);
-  return <div>Olá mundo {mainTime}</div>;
+  return <div>Olá mundo {secondsToTime(mainTime)}</div>;
 }
