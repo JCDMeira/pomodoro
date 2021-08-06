@@ -2,11 +2,20 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { useInterval } from "../hooks/use-interval";
+// import useSound from "use-sound";
 
 //  # My own files
+import { useInterval } from "../hooks/use-interval";
 import { Button } from "./button";
 import { Timer } from "./timer";
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+//_ const bellStart = require("../sounds/bell-start.mp3");
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+//_ const bellFinish = require("../sounds/bell-finish.mp3");
+
+// const audioStartWoking = new Audio(bellStart);
+// const audioStopWoking = new Audio(bellFinish);
 
 interface Props {
   pomodoroTime: number;
@@ -37,6 +46,7 @@ export function PomodoroTimer(props: Props): JSX.Element {
     setWorking(true);
     setResting(false);
     setMainTime(props.pomodoroTime);
+    // audioStartWoking.play();
   };
 
   const configureRest = (Long: boolean) => {
@@ -48,6 +58,7 @@ export function PomodoroTimer(props: Props): JSX.Element {
     } else {
       setMainTime(props.shortRestTime);
     }
+    // audioStopWoking.play();
   };
 
   return (
