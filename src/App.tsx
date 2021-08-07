@@ -1,5 +1,5 @@
 import React from "react";
-import { PomodoroTimer } from "./components/pomodoro-timer";
+import { PomodoroTimer } from "./components/pomodoro-time";
 function App(): JSX.Element {
   return (
     <div className="container">
